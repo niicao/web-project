@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "a5fcf1b2-a5fe-4ac5-b6b5-8ef11d902dbf",
+		"name": "Teste Super-usuário",
+		"description": "- Faz login\n    \n- Verifica usuarios\n    \n- altera um evento",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36129525",
+		"_collection_link": "https://site-assc-time.postman.co/workspace/SisteASSC~3595a09a-c9d2-4a76-bcc6-642a127a7dbf/collection/36129525-a5fcf1b2-a5fe-4ac5-b6b5-8ef11d902dbf?action=share&source=collection_link&creator=36129525"
+	},
+	"item": [
+		{
+			"name": "login_super + set coll_var_token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"if (jsonData.token) {",
+							"  // Armazena o token na variável de ambiente",
+							"  pm.collectionVariables.set(\"token\", jsonData.token);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"admin@admin.com\",\n    \"senha\":\"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get usuarios ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Obtém o token da variável de coleção",
+							"var token = pm.collectionVariables.get(\"token\");",
+							"",
+							"if (!token) {",
+							"  // Se o token não estiver disponível, faça a requisição de login para obtê-lo",
+							"  pm.sendRequest({",
+							"    url: 'localhost:3000/login',",
+							"    method: 'POST',",
+							"    header: {",
+							"      'Content-Type': 'application/json'",
+							"    },",
+							"    body: {",
+							"      mode: 'raw',",
+							"      raw: JSON.stringify({",
+							"        \"email\":\"admin@admin.com\",",
+							"        \"senha\":\"admin\"",
+							"      })",
+							"    }",
+							"  }, function (err, res) {",
+							"    var jsonData = res.json();",
+							"    pm.collectionVariables.set(\"token\", jsonData.token);",
+							"    // Adiciona o token recém-obtido ao header",
+							"    pm.request.headers.add({key: 'Authorization', value: 'Bearer ' + jsonData.token});",
+							"  });",
+							"} else {",
+							"  // Se o token estiver disponível, adiciona ao header",
+							"  pm.request.headers.add({key: 'Authorization', value: 'Bearer ' + token});",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/usuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,187 @@
+@media (max-width: 768px) {
+    .btn {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        font-size: 1.1rem !important;
+    }
+    .btn.btn-primary.button-gradient {
+        width: 80%;
+        font-size: 0.8rem !important;
+
+    } 
+
+    .special-col-auto {
+        margin-left: 33.4% !important;
+        margin-right: 10% !important;
+        margin-top: 10% !important;
+        width: 70% !important;
+    }
+    .btn.text-white {
+        font-size: 100%;
+        padding-left: 0%;
+    }
+    .footer-botoes{
+        font-size: 1.4em !important;
+        margin-left: -6% !important;
+        padding-top: 5% !important;
+    }
+    .botoes-redes{
+        color: inherit; 
+        text-decoration: none;
+        margin-left: 0%;
+        padding-right: 15%
+    }
+    .botao{
+        font-size: 3em !important;
+    }
+    .image{
+        padding-left: -120%;
+        margin-left: -6%;
+    }
+
+}
+.botao{
+    padding-right: 25%;
+}
+.special-col-auto {
+    width: 30% ;
+    padding-left: 10% ;
+    margin-top: -2% !important;
+}
+.footer-redes{
+    padding-left: 3% !important;
+}
+.footer-botoes{
+    padding-left: 7% !important;
+
+}
+.gradient-bg {
+    background: linear-gradient(90deg, #438faf, #30b0e7);
+}
+.logo-bg {
+    background: url('./assets/images/37712badce09e5cc9620a2fe7e0ea105f629368a.png') no-repeat center;
+    background-size: cover;
+}
+.settings-bg {
+    background: url('./assets/images/1ad2188e4aed970c9b5106e3e76e06018d3ee24b.png') no-repeat center;
+    background-size: cover;
+}
+.streamline-bg {
+    background: url('./assets/images/51a57da3d74e8b2f035185c4b469980975e453f6.png') no-repeat center;
+    background-size: cover;
+}
+.button-gradient {
+    background: linear-gradient(90deg, #f6f2a4, #948500);
+    border-radius: 60px !important;
+    
+}
+.btn-secondary {
+    background-color: transparent !important;
+    border-color: #6c757d;
+    border: none;
+}
+.btn.text {
+    font-family: 'Montserrat';
+    font-size: 1.5em;
+    padding-left: 10%; /* Increase left padding */
+    padding-right: 10%; /* Increase right padding */
+    transition: color 0.3s; /* Smooth transition for background color change */
+    padding-top: 0px;
+    color: black;
+    border: none;
+    outline: none;
+}
+.btn.text:hover {
+    text-decoration-color: white;
+    color: white; 
+    outline: none;
+}
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+}
+.btn.btn-secondary:focus, .btn.btn-secondary:active{
+    outline: none !important;
+    box-shadow: none;
+}
+.btn.btn-secondary:hover{
+    color: black;
+    box-shadow: none;
+}
+.btn.btn-primary.button-gradient{
+    color: black;
+    box-shadow: none;
+    width: 30%;
+}
+.btn.btn-primary.button-gradient:hover{
+    color: white;
+    box-shadow: none;
+}
+.btn.btn-primary.button-gradient:focus, .btn.btn-primary.button-gradient:active{
+    outline: none !important;
+    box-shadow: none;
+}
+.btn.btn-secondary {
+    font-family: 'Montserrat';
+    font-size: 1.5em;
+    padding-left: 0%; /* Increase left padding */
+    padding-right: 1.5%; /* Increase right padding */
+    transition: color 0.3s; /* Smooth transition for background color change */
+    border: none;
+}
+.btn.btn-primary.button-gradient {
+    font-family: 'Montserrat';
+    font-size: 1em;
+    padding-left: 0em; /* Increase left padding */
+    padding-right: 0%; /* Increase right padding */
+    transition: color 0.3s; /* Smooth transition for background color change */
+    width: 40%;
+}
+.bi.bi-gear{
+    font-size: 1.5%;
+    padding-left: 2%;
+    padding-right: 0px;
+}
+.bi.bi-caret-down{
+    font-size: 2%;
+    padding-left: 0px;
+    padding-right: 0em;
+
+}
+
+.bg-black-custom {
+    background-color: #37383C
+}
+
+.footer-content {
+    color: white;
+}
+
+.bi.bi {
+    width: 5%;
+    height: 5%;
+    background-size: cover;
+    background-position: center;
+    font-size: 23px;
+    padding-right: 10px; /* Adjust spacing between icons */
+}
+
+.footer-text {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0; /* Reduce spacing if needed */
+}
+
+.rights-text {
+    font-size: 12px;
+    font-weight: 300;
+}
+.row-align-items-center.col-auto{
+    padding-top: -15px !important;
+    padding-left: -50%;
+    width: 40em;
+}
+.botoes-redes{
+    color: inherit; 
+    text-decoration: none;
+    padding-right: 15%
+}

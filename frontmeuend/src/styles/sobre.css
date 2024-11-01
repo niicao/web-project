@@ -1,0 +1,113 @@
+.image-background-sobre {
+    position: relative; /* Certifica-se de que a imagem de fundo está dentro do contexto de empilhamento */
+    width: 100%;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    z-index: 0; /* Define um contexto de empilhamento */
+}
+
+.background-image-sobre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px);
+    z-index: -1; /* Certifique-se de que o z-index está correto para ficar atrás do texto */
+}
+
+.atividades-style {
+    background-color: #024959;
+    color: #E6E6E6;
+}
+
+.carousel-bg {
+    background-color: #F6F3A4; 
+}
+
+
+.title {
+    color: #E6E6E6;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    z-index: 1;
+}
+
+
+.text {
+    color: #E6E6E6;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200sf;
+    font-style: normal;
+    font-size: large;
+}
+
+.anos {
+    font-weight: 500;
+    font-size: xx-large;
+}
+
+#button-cadastro{
+    display: flex;
+    justify-content: center;
+}
+
+.overlapping-button{
+    border-color: transparent;
+    border-radius: 20px;
+    background-color: #024959;
+    /*display: flex;*/
+    align-items: center;
+    font-size: 16px;
+    color: #E6E6E6;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 25px 60px;
+    width: 100%;
+    justify-content: center;
+    /*flex-direction:;*/
+}
+
+.somos-bg {
+    background-color: #02647a;
+}
+
+.historia-design {
+    background-color: #F6F3A4;
+    color:#000;
+}
+
+blockquote {
+    display: inline;
+    justify-content: center;
+}   
+
+.center {
+    margin: 0 auto;
+    padding: 10px;
+    width: 50%;
+    justify-content: center;
+  }
+
+.image-background{
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image:url('https://cdn.builder.io/api/v1/image/assets/TEMP/317c85902bc00a91cd89ecee7e078f6503ba0757c4085db246cf901301ab4cb5?apiKey=7df1ecca409e42de8622c49afce9d2c2&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/317c85902bc00a91cd89ecee7e078f6503ba0757c4085db246cf901301ab4cb5?apiKey=7df1ecca409e42de8622c49afce9d2c2&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/317c85902bc00a91cd89ecee7e078f6503ba0757c4085db246cf901301ab4cb5?apiKey=7df1ecca409e42de8622c49afce9d2c2&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/317c85902bc00a91cd89ecee7e078f6503ba0757c4085db246cf901301ab4cb5?apiKey=7df1ecca409e42de8622c49afce9d2c2&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/317c85902bc00a91cd89ecee7e078f6503ba0757c4085db246cf901301ab4cb5?apiKey=7df1ecca409e42de8622c49afce9d2c2&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/317c85902bc00a91cd89ecee7e078f6503ba0757c4085db246cf901301ab4cb5?apiKey=7df1ecca409e42de8622c49afce9d2c2&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/317c85902bc00a91cd89ecee7e078f6503ba0757c4085db246cf901301ab4cb5?apiKey=7df1ecca409e42de8622c49afce9d2c2&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/317c85902bc00a91cd89ecee7e078f6503ba0757c4085db246cf901301ab4cb5?apiKey=7df1ecca409e42de8622c49afce9d2c2&');
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.links{
+    font-weight: 500;
+    font-size: x-large;
+}
+

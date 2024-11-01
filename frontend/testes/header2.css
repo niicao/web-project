@@ -1,0 +1,47 @@
+.gradient-bg {
+    background: linear-gradient(90deg, #438faf, #30b0e7);
+}
+
+#texto-ASSC-header{
+    font-family: "Limelight", sans-serif;
+    font-style: normal;
+    font-size: 4em;
+}
+
+.texto-link{
+    font-family: 'Montserrat';
+    font-size: 1.25em;
+    transition: color 0.3s;
+    padding-top: 0px;
+    color: black;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.texto-link:hover {
+    text-decoration-color: white;
+    color: white; 
+    outline: none;
+}
+
+#acessar{
+    text-decoration-color: white;
+    color: white; 
+    outline: none;
+}
+
+#acessar:hover{
+    text-decoration-color: black;
+    color: black; 
+    outline: none;
+}
+
+#botao-cadastro-header{
+    background: linear-gradient(90deg, #f6f2a4, #948500);
+    border-radius: 60px;
+}
+
+#botao-cadastro-header:hover{
+    color:white;
+}

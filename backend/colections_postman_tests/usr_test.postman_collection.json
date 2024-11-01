@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "6a3fecae-eacd-4e1d-a836-8ab8aa1045d8",
+		"name": "Teste de Usuário",
+		"description": "- tentativa de cadastro\n    \n- tentativa de login\n    \n- tentativa de criar evento\n    \n- tentativa de ver evento",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36129525",
+		"_collection_link": "https://site-assc-time.postman.co/workspace/SisteASSC~3595a09a-c9d2-4a76-bcc6-642a127a7dbf/collection/36129525-6a3fecae-eacd-4e1d-a836-8ab8aa1045d8?action=share&source=collection_link&creator=36129525"
+	},
+	"item": [
+		{
+			"name": "tentativa de cadastro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"João Calixto\",\n    \"telefone\": \"1633231234\",\n    \"email\": \"email@email.com\",\n    \"dataNascimento\": \"20/04/1992\",\n    \"concordo\": true,\n    \"senha\": \"senhamaneira\",\n    \"cidade\": \"ruassu\",\n    \"estado\": \"goias\",\n    \"cep\": \"122222233\",\n    \"tipo\": \"surdo\",\n    \"formacao\": \"estudou\",\n    \"experiencia\": \"nenhuma\",\n    \"trabAtual\": false,\n    \"recomendacoes\": \"sim\",\n    \"interesse\": false,\n    \"segunda\": [],\n    \"terca\": [],\n    \"quarta\": [\"manhã\"],\n    \"quinta\": [\"tarde\"],\n    \"sexta\": [\"noite\"],\n    \"sabado\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/cadastro",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cadastro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login com sucesso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"if (jsonData.token) {",
+							"  // Armazena o token na variável de ambiente",
+							"  pm.collectionVariables.set(\"token\", jsonData.token);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"email@email.com\",\n    \"senha\":\"senhamaneira\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criação de evento",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Obtém o token da variável de coleção",
+							"var token = pm.collectionVariables.get(\"token\");",
+							"",
+							"if (!token) {",
+							"  // Se o token não estiver disponível, faça a requisição de login para obtê-lo",
+							"  pm.sendRequest({",
+							"    url: 'localhost:3000/login',",
+							"    method: 'POST',",
+							"    header: {",
+							"      'Content-Type': 'application/json'",
+							"    },",
+							"    body: {",
+							"      mode: 'raw',",
+							"      raw: JSON.stringify({",
+							"        \"email\":\"email@email.com\",",
+							"        \"senha\":\"senhamaneira\"",
+							"      })",
+							"    }",
+							"  }, function (err, res) {",
+							"    var jsonData = res.json();",
+							"    pm.collectionVariables.set(\"token\", jsonData.token);",
+							"    // Adiciona o token recém-obtido ao header",
+							"    pm.request.headers.add({key: 'Authorization', value: 'Bearer ' + jsonData.token});",
+							"  });",
+							"} else {",
+							"  // Se o token estiver disponível, adiciona ao header",
+							"  pm.request.headers.add({key: 'Authorization', value: 'Bearer ' + token});",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/eventos",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eventos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Requisição de Links",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Obtém o token da variável de coleção",
+							"var token = pm.collectionVariables.get(\"token\");",
+							"",
+							"if (!token) {",
+							"  // Se o token não estiver disponível, faça a requisição de login para obtê-lo",
+							"  pm.sendRequest({",
+							"    url: 'localhost:3000/login',",
+							"    method: 'POST',",
+							"    header: {",
+							"      'Content-Type': 'application/json'",
+							"    },",
+							"    body: {",
+							"      mode: 'raw',",
+							"      raw: JSON.stringify({",
+							"        \"email\":\"email@email.com\",",
+							"        \"senha\":\"senhamaneira\"",
+							"      })",
+							"    }",
+							"  }, function (err, res) {",
+							"    var jsonData = res.json();",
+							"    pm.collectionVariables.set(\"token\", jsonData.token);",
+							"    // Adiciona o token recém-obtido ao header",
+							"    pm.request.headers.add({key: 'Authorization', value: 'Bearer ' + jsonData.token});",
+							"  });",
+							"} else {",
+							"  // Se o token estiver disponível, adiciona ao header",
+							"  pm.request.headers.add({key: 'Authorization', value: 'Bearer ' + token});",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/links",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"links"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleção de evento",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Obtém o token da variável de coleção",
+							"var token = pm.collectionVariables.get(\"token\");",
+							"",
+							"if (!token) {",
+							"  // Se o token não estiver disponível, faça a requisição de login para obtê-lo",
+							"  pm.sendRequest({",
+							"    url: 'localhost:3000/login',",
+							"    method: 'POST',",
+							"    header: {",
+							"      'Content-Type': 'application/json'",
+							"    },",
+							"    body: {",
+							"      mode: 'raw',",
+							"      raw: JSON.stringify({",
+							"        \"email\":\"email@email.com\",",
+							"        \"senha\":\"senhamaneira\"",
+							"      })",
+							"    }",
+							"  }, function (err, res) {",
+							"    var jsonData = res.json();",
+							"    pm.collectionVariables.set(\"token\", jsonData.token);",
+							"    // Adiciona o token recém-obtido ao header",
+							"    pm.request.headers.add({key: 'Authorization', value: 'Bearer ' + jsonData.token});",
+							"  });",
+							"} else {",
+							"  // Se o token estiver disponível, adiciona ao header",
+							"  pm.request.headers.add({key: 'Authorization', value: 'Bearer ' + token});",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/eventos/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eventos",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "jwt",
+		"jwt": [
+			{
+				"key": "secret",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "isSecretBase64Encoded",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "algorithm",
+				"value": "HS256",
+				"type": "string"
+			},
+			{
+				"key": "payload",
+				"value": "{}",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "headerPrefix",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "queryParamKey",
+				"value": "token",
+				"type": "string"
+			},
+			{
+				"key": "header",
+				"value": "{}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}

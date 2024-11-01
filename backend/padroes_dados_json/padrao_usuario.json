@@ -1,0 +1,23 @@
+{
+    "nome": "João Calixto",
+    "telefone": "1633231234",
+    "email": "email@email.com",
+    "dataNascimento": "20/04/1992",
+    "concordo": true,
+    "senha": "senhamaneira",
+    "cidade": "ruassu",
+    "estado": "goias",
+    "cep": "122222233",
+    "tipo": "surdo",
+    "formacao": "estudou",
+    "experiencia": "nenhuma",
+    "trabAtual": false,
+    "recomendacoes": "sim",
+    "interesse": false,
+    "segunda": [],
+    "terca": [],
+    "quarta": ["manhã"],
+    "quinta": ["tarde"],
+    "sexta": ["noite"],
+    "sabado": []
+}

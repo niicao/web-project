@@ -1,0 +1,81 @@
+.outline-button {
+    border-color: transparent;
+    border-radius: 20px;
+    background-color: #024959;
+    display: flex;
+    width: auto;
+    align-items: center;
+    font-size: 16px;
+    color: #E6E6E6;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: center;
+    padding: 13px 60px;
+    margin-top: 40px;
+    margin-left: auto;
+}
+
+.outline-button:hover{
+    color: black;
+}
+
+.outline-button:link{
+    text-decoration: none;
+}
+
+.outline-button:visited{
+    text-decoration: none;
+}
+
+.button-text{
+    font-family: Montserrat, sans-serif;
+    margin: auto;
+    margin-right: 30px;
+}
+
+.button-class{
+    display: flex;
+    margin-left: 53px;
+    max-width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.overlapping-button{
+    border-color: transparent;
+    border-radius: 20px;
+    background-color: #024959;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #E6E6E6;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 25px 60px;
+    margin: auto;
+    width: 40%;
+    justify-content: center;
+    @media screen and (max-width: 480px) {
+        width: 80%;
+
+    }
+}
+
+.custom-file-button{
+    border: 1px solid #ccc;
+    border-style: dashed;
+    background-color: transparent;
+    display: flex;
+    padding: 40px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+    font-family: Montserrat, sans-serif;
+}
+
+.botao-login{
+    padding: 13px 60px;
+    margin-top: 15px;
+    font-weight: 400;
+}

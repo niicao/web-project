@@ -1,0 +1,78 @@
+/* TEXTO */
+
+/* - Título */
+.text_t{
+    font-size: 2.2em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #958600;
+    text-align: justify;
+    line-height: 1.1;
+}
+
+/* - Parágrafo */
+.text_p{
+    font-size: 1.0em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* - Título 2 */
+.text_t2{
+
+    font-size: 1.7em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 550;
+    text-align: justify;
+    line-height: 1.1;
+}
+
+/* - Formulário */
+.text_f{
+    font-size: 0.9em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* - Containers Coloridos */
+.text_c{
+    font-size: 1.0em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    color: white;
+    line-height: 1.5;
+}
+
+/* CORES E PLANO DE FUNDO */
+
+#bg1{
+    background-color: #2553aecf;
+
+}
+
+#bg2{
+    background-color: #1b6f37bf;
+
+}
+
+#bg3{
+    background-color: #808020;
+}
+
+.side_banner {
+    background-image: url(../html/img/placeholder.png);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+@media (max-width: 750px) {
+    .side_banner{
+        display: none;
+    }
+}

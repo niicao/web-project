@@ -1,0 +1,59 @@
+@media (max-width: 768px) {
+    .btn {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        font-size: 1.1rem !important;
+    }
+    .btn.btn-primary.button-gradient {
+        width: 80%;
+        font-size: 0.8rem !important;
+
+    } 
+
+    .special-col-auto {
+        margin-left: 33.4% !important;
+        margin-right: 10% !important;
+        margin-top: 10% !important;
+        width: 70% !important;
+    }
+    .btn.text-white {
+        font-size: 100%;
+        padding-left: 0%;
+    }
+    .footer-botoes{
+        font-size: 1.4em !important;
+        margin-left: -6% !important;
+        padding-top: 5% !important;
+    }
+    .botoes-redes{
+        color: inherit; 
+        text-decoration: none;
+        margin-left: 0%;
+        padding-right: 15%
+    }
+    .botao{
+        font-size: 3em !important;
+    }
+    .image{
+        padding-left: -120%;
+        margin-left: -6%;
+    }
+
+}
+
+.footer-redes{
+    padding-left: 3% !important;
+}
+
+.footer-botoes{
+    padding-left: 7% !important;
+}
+
+.footer-content {
+    color: white;
+}
+
+.footer-text {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0; /* Reduce spacing if needed */
+}
